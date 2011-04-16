@@ -2,8 +2,8 @@ import os
 from setuptools import setup
 
 setup(
-	name = "Client for App Notifications (4push) for iOS",
-	version = "0.1",
+	name = "apnspush",
+	version = "0.1.1",
 	author = "Cameron Villers",
 	author_email = "cameron@ville.rs",
 	description = ("A client for the App Notifications service for Apple mobile devices."),

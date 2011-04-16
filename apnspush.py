@@ -4,6 +4,7 @@ import notifications
 import argparse
 import json
 import sys
+import os
 
 DEFAULT_CONFIG = "/etc/apnspush.conf"
 EPILOG = "API keys must be put in the configuration file (default %s)." % DEFAULT_CONFIG
@@ -35,6 +36,10 @@ parser.add_argument("message", help="message text displayed in notfication", typ
 args = parser.parse_args()
 
 ###############################################################################
+
+if not os.path.isfile(args.config)
+	print("Could not load config file %s" % args.config)
+	sys.exit(1)
 
 f = open(args.config)
 config = json.load(f)
