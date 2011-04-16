@@ -1,5 +1,8 @@
 # vim: set ft=python :
 
+__version__ = "0.1"
+__author__ = "Cameron Villers <cameron@ville.rs>"
+
 import notifications
 import argparse
 import json
