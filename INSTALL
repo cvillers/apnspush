@@ -1,0 +1,8 @@
+To install:
+
+1) setup.py install
+2) Install the "Notifications" (4push) application on your iOS device
+3) Register for an account at http://www.appnotifications.com
+4) Copy apnspush.conf.example to /etc/apnspush.conf
+5) Put the API key(s) and names you will be sending notifications to in /etc/apnspush.conf
+

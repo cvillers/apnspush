@@ -1,3 +1,6 @@
 {
-	"keys" : ["YOUR-KEY-HERE", "ANOTHER-KEY-HERE"]
+	"keys" : {
+		"user1": "USER1-KEY-HERE",
+		"user2": "USER2-KEY-HERE"
+	}
 }
