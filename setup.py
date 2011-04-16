@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
 	name = "apnspush",
-	version = "0.2",
+	version = "0.2.1",
 	author = "Cameron Villers",
 	author_email = "cameron@ville.rs",
 	description = ("A client for the App Notifications service for Apple mobile devices."),
