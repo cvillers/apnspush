@@ -1,0 +1,22 @@
+# The below commands send a nicely formatted message to the device,
+# very similarly to the default email messages but formatted nicer.
+
+define command{
+        command_name    notify-host-by-apns
+        command_line    /usr/bin/printf "%b" "<strong>Notification Type:</strong> 
+$NOTIFICATIONTYPE$<br><strong>Host:</strong> $HOSTNAME$<br><strong>State:</strong> $HOSTSTATE$<br><strong>Address:</strong> 
+$HOSTADDRESS$<br><strong>Info:</strong> $HOSTOUTPUT$<br><br><strong>Date/Time:</strong> $LONGDATETIME$<br>" | 
+/usr/bin/apnspush.py -t "$HOSTNAME$ Host Alert" -r true -u $CONTACTADDRESS1$ -s "Nagios alert for host $HOSTNAME$" -p "" 
+"$HOSTNAME$ is $HOSTSTATE$"
+        }
+
+define command{
+        command_name    notify-service-by-apns
+        command_line    /usr/bin/printf "%b" "<strong>Notification Type:</strong> 
+$NOTIFICATIONTYPE$<br><br><strong>Service:</strong> $SERVICEDESC$<br><strong>Host:</strong> 
+$HOSTALIAS$<br><strong>Address:</strong> $HOSTADDRESS$<br><strong>State:</strong> 
+$SERVICESTATE$<br><br><strong>Date/Time:</strong> $LONGDATETIME$<br><br><strong>Additional 
+Info:</strong><br><br>$SERVICEOUTPUT$" | /usr/bin/apnspush.py -t "$HOSTNAME$ service alert" -r true -u $CONTACTADDRESS1$ -s 
+"Nagios alert for $SERVICEDISPLAYNAME$ on $HOSTNAME$" -p "" "$HOSTNAME$/$SERVICEDESC$ is $SERVICESTATE$"
+        }
+
