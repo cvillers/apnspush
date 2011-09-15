@@ -1,6 +1,12 @@
 import os
 from setuptools import setup
 
+if sys.version < (2, 6):
+	REQUIRES = ["simplejson", "argparse", "notifications"]
+else:
+	REQUIRES = ["json", "argparse", "notifications"]
+
+
 setup(
 	name = "apnspush",
 	version = "0.2.3",
@@ -11,7 +17,7 @@ setup(
 	keywords = "iOS push",
 	url = "https://github.com/cvillers/apnspush",
 	scripts = ["apnspush.py"],
-	install_requires = ["notifications"],
+	install_requires = REQUIRES,
 	classifiers = [
 		"Development Status :: 4 - Beta"
 	]

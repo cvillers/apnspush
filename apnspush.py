@@ -2,7 +2,10 @@
 
 import notifications
 import argparse
-import json
+try:
+	import json
+except ImportError:
+	import simplejson as json
 import sys
 import os
 
