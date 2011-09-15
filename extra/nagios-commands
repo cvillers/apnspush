@@ -1,5 +1,8 @@
 # The below commands send a nicely formatted message to the device,
 # very similarly to the default email messages but formatted nicer.
+#
+# To use, set a service or host notification command to notify-{host,service}-by-apns
+# and put your API key name (configured in apnspush.conf) in the address1 contact field.
 
 define command{
         command_name    notify-host-by-apns
