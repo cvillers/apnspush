@@ -9,7 +9,7 @@ else:
 
 setup(
 	name = "apnspush",
-	version = "0.2.3",
+	version = "0.3.2",
 	author = "Cameron Villers",
 	author_email = "cameron@ville.rs",
 	description = ("A client for the App Notifications service for Apple mobile devices."),
