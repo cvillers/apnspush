@@ -29,7 +29,8 @@ parser.add_argument("-u", "--users", help="list of users defined in the configur
 
 soundGroup = parser.add_mutually_exclusive_group()
 soundGroup.add_argument("-q", "--silent-message", help="do not play a sound for the recipient", type=bool, default=False, metavar='')
-soundGroup.add_argument("-n", "--sound", help="sound to play on the mobile device", choices=range(1, 8), type=int, default=1)
+soundGroup.add_argument("-n", "--sound", help="sound to play on the mobile device", type=int, default=1)
+# The range is subject to change, used to be (1,7] but is completely different in 4.0, see https://gist.github.com/1217045
 
 longGroup = parser.add_mutually_exclusive_group()
 longGroup.add_argument("-l", "--long-message", help="long message displayed in application", type=str)
